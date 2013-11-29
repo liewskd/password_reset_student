@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
   
   def contactUs
   end
+  
+  def resetPassword
+  end
 end

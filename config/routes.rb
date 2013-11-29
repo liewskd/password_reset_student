@@ -1,7 +1,22 @@
 PasswordResetStudent::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/FAQ"
-  get "static_pages/contactUs"
+    
+    
+  get "reset_password/gmail_student"
+  match '/gmail_student', to: 'reset_password#gmail_student', via: 'get'
+  get "reset_password/ssoe_student"
+   match '/ssoe_student', to: 'reset_password#ssoe_student', via: 'get'
+  get "reset_password/gmail_staff"
+   match '/gmail_staff', to: 'reset_password#gmail_staff', via: 'get'
+  get "reset_password/ssoe_staff"
+   match '/ssoe_staff', to: 'reset_password#ssoe_staff', via: 'get'
+    #get "static_pages/home"
+    root 'static_pages#home'
+    #get "static_pages/FAQ"
+    match '/faq', to: 'static_pages#FAQ', via: 'get'
+    #get "static_pages/contactUs"
+    match '/contactUs', to: 'static_pages#contactUs', via: 'get'
+    #get "static_pages/resetPassword"
+    match '/resetPassword', to: 'static_pages#resetPassword', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
